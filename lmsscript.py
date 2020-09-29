@@ -8,6 +8,7 @@ TimeTable = {"monday" : {'2:32' : 'https://tiet.zoom.us/my/csed6'}
 }
 
 
+
 def link(timetable,time):
     if time in timetable:
         link=timetable[time]
@@ -26,7 +27,7 @@ def main():
     day = now.strftime("%A")
     time = f"{now.hour}:{now.minute}"   
     #opens link according to day and time 
-    timetable = Timetable[day]
+    timetable = TimeTable[day]
     link = link(timetable,time) #returns link according tpo thi time 
     openzoom(link)
 
@@ -35,8 +36,9 @@ def openzoom(link):
     driver.get(link)
     
 def sleep(time):
+    now = datetime.datetime.now()
     nowtime = now.hour*60*60+now.minute*60
-    t = time.split(:)
+    t = time.split(":")
     t = t[0]*60*60+t[1]*60
     t.sleep(t-nowtime)
     main()  
