@@ -27,6 +27,9 @@ def main():
     day = now.strftime("%A")
     time = f"{now.hour}:{now.minute}"   
     #opens link according to day and time 
+    if day == 'Sunday':
+        driver.get('https://www.pinterest.com/pin/303641199850313907/')
+        exit()
     timetable = TimeTable[day]
     link = link(timetable,time) #returns link according tpo thi time 
     openzoom(link)
