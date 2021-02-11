@@ -14,7 +14,7 @@ def link(timetable,time):
         link=timetable[time]
         return link
     else:
-        nextime = timetable.get(time) or timetable[ 
+         timetable[ 
         min(timetable.keys(), key = lambda key: abs(key-time))]
         sleep(nextime)
 
